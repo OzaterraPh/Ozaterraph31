@@ -73,7 +73,7 @@ const TestimonialCard = ({ name, rating, comment, experience }: any) => (
     <div className="flex gap-1 mb-4 text-[#9f956d]">
       {[...Array(rating)].map((_, i) => <Award key={i} className="size-5 fill-current" />)}
     </div>
-    <p className="text-gray-700 italic mb-6">"{comment}"</p>
+    <p className="text-gray-700 italic mb-6">&quot;{comment}&quot;</p>
     <div>
       <div className="font-bold text-gray-900">{name}</div>
       <div className="text-sm text-gray-500">{experience}</div>
