@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link'; // <-- LE MOTEUR DE NAVIGATION NEXT.JS
 import {
   MapPin,
   Award,
@@ -97,9 +98,12 @@ const SearchBar = () => (
         <span className="text-gray-900">2 personnes</span>
       </div>
     </div>
-    <Button className="w-full md:w-auto px-8 py-4">
-      <Search className="size-5 mr-2" /> Rechercher
-    </Button>
+    {/* LE LIEN DE NAVIGATION EST ICI */}
+    <Link href="/experiences" className="w-full md:w-auto">
+      <Button className="w-full px-8 py-4 h-full">
+        <Search className="size-5 mr-2" /> Rechercher
+      </Button>
+    </Link>
   </div>
 );
 
@@ -107,7 +111,6 @@ const SocialMediaGrid = () => (
   <section className="py-16 bg-white overflow-hidden border-t border-gray-100">
     <div className="max-w-7xl mx-auto px-4 text-center mb-10">
       <div className="inline-flex items-center justify-center size-12 rounded-full bg-[#f5faea] mb-4">
-        {/* SVG en dur pour éviter tout plantage Lucide */}
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#9f956d]">
           <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -176,10 +179,10 @@ export default function App() {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-[#bccfa7]/20">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <Leaf className="text-[#9f956d] size-8" />
             <span className="text-2xl font-bold tracking-tight text-gray-900">Ozaterra</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#about" className="text-sm font-medium hover:text-[#bbc577] transition-colors">Qui sommes-nous</a>
             <a href="#contact" className="text-sm font-medium hover:text-[#bbc577] transition-colors">Contact</a>
@@ -256,7 +259,9 @@ export default function App() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
             {categories.map((category, index) => (
-              <CategoryCard key={index} {...category} />
+              <Link href="/experiences" key={index}>
+                <CategoryCard {...category} />
+              </Link>
             ))}
           </div>
         </div>
@@ -270,7 +275,9 @@ export default function App() {
               <h2 className="text-4xl font-serif mb-2 text-gray-900">Expériences populaires</h2>
               <p className="text-xl text-gray-600">Réservées et appréciées par notre communauté</p>
             </div>
-            <Button variant="outline" className="hidden md:flex">Voir tout <ChevronRight className="size-4 ml-2" /></Button>
+            <Link href="/experiences">
+              <Button variant="outline" className="hidden md:flex">Voir tout <ChevronRight className="size-4 ml-2" /></Button>
+            </Link>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {experiences.map((experience) => (
@@ -326,13 +333,13 @@ export default function App() {
             <div>
               <h4 className="font-bold text-lg mb-6 text-white">Explorer</h4>
               <ul className="space-y-3 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-[#bccfa7] transition-colors">Maraîchage</a></li>
-                <li><a href="#" className="hover:text-[#bccfa7] transition-colors">Arboriculture</a></li>
-                <li><a href="#" className="hover:text-[#bccfa7] transition-colors">Viticulture</a></li>
-                <li><a href="#" className="hover:text-[#bccfa7] transition-colors">Céréales</a></li>
-                <li><a href="#" className="hover:text-[#bccfa7] transition-colors">Élevage</a></li>
-                <li><a href="#" className="hover:text-[#bccfa7] transition-colors">Apiculture</a></li>
-                <li><a href="#" className="hover:text-[#bccfa7] transition-colors">Horticulture</a></li>
+                <li><Link href="/experiences" className="hover:text-[#bccfa7] transition-colors">Maraîchage</Link></li>
+                <li><Link href="/experiences" className="hover:text-[#bccfa7] transition-colors">Arboriculture</Link></li>
+                <li><Link href="/experiences" className="hover:text-[#bccfa7] transition-colors">Viticulture</Link></li>
+                <li><Link href="/experiences" className="hover:text-[#bccfa7] transition-colors">Céréales</Link></li>
+                <li><Link href="/experiences" className="hover:text-[#bccfa7] transition-colors">Élevage</Link></li>
+                <li><Link href="/experiences" className="hover:text-[#bccfa7] transition-colors">Apiculture</Link></li>
+                <li><Link href="/experiences" className="hover:text-[#bccfa7] transition-colors">Horticulture</Link></li>
               </ul>
             </div>
             <div>
