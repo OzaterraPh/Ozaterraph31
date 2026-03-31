@@ -14,8 +14,7 @@ import {
   Milk,
   Flower2,
   ChevronRight,
-  Search,
-  Instagram
+  Search
 } from "lucide-react";
 
 // --- COMPOSANTS INCLUS ---
@@ -108,7 +107,12 @@ const SocialMediaGrid = () => (
   <section className="py-16 bg-white overflow-hidden border-t border-gray-100">
     <div className="max-w-7xl mx-auto px-4 text-center mb-10">
       <div className="inline-flex items-center justify-center size-12 rounded-full bg-[#f5faea] mb-4">
-        <Instagram className="size-6 text-[#9f956d]" />
+        {/* SVG en dur pour éviter tout plantage Lucide */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#9f956d]">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+        </svg>
       </div>
       <h2 className="text-3xl font-serif mb-2 text-gray-900">Suivez nos aventures</h2>
       <p className="text-gray-500">@ozaterra_fr</p>
