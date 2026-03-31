@@ -19,10 +19,10 @@ export default function Hero() {
 
       <div className="relative z-10 text-center mb-12">
         <h1 className="text-6xl md:text-8xl font-serif text-white mb-6 drop-shadow-xl italic">
-          L'authenticité a une adresse
+        {"L'authenticité à une adresse"}
         </h1>
         <p className="text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
-          Vivez une immersion totale dans le monde agricole avec des expériences uniques et durables.
+          {"Vivez une immersion totale dans le monde agricole avec des expériences uniques et durables"}.
         </p>
       </div>
 
